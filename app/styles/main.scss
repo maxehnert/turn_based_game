@@ -18,9 +18,21 @@ body {
   background-color: #eee;
   border-radius: 6px;
   padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+.welcome{
+  text-align: center;
+}
+
+.fight{
+  display: none;
+  text-align: center;
+}
+
+.ggHealth, .bgHealth{
+
+}
+
+.end{
+  display: none;
+  text-align: center;
+}
 }
