@@ -1,15 +1,44 @@
-var Badguy = function (name){
-
-  this.name = name;
+// var Badguy = function (name){
+//
+//   this.name = name;
+//   this.health = 100;
+//   this.attack = function (attackee){
+//     return attackee.health = attackee.health - _.random(2, 10);
+//   };
+//   this.special = function (attackee){
+//     return attackee.health = attackee.health - _.random(10, 50);
+//   };
+// };
+/////////////////////////////////////
+var Badguy = function (options){
+var special_pts, attack_pts;
+  options = options || {};
+  this.name = options.name;
+  this.type = options.type;
   this.health = 100;
+  switch (this.type){
+    case "1":
+      attack_pts = _.random(4, 6);;
+      special_pts = 5;
+    break;
+    case "2":
+      attack_pts = _.random(1, 10);
+      special_pts = 25;
+    break;
+    case "3":
+      attack_pts = _.random(2, 8);
+      special_pts = 30;
+    break;
+  };
   this.attack = function (attackee){
-    return attackee.health = attackee.health - _.random(2, 10);
+    return attackee.health = attackee.health - attack_pts;
   };
   this.special = function (attackee){
-    return attackee.health = attackee.health - _.random(10, 50);
+    return attackee.health = attackee.health - special_pts; //_.random(10, 50);
   };
 };
 
+////////////////////////////////////
 
 var Goodguy = function (options){
   var special_pt, attack_pt;
@@ -19,16 +48,15 @@ var Goodguy = function (options){
   this.health = 100;
   switch (this.type){
     case "1":
-      attack_pt = 10;
-      special_pt = 10;
+      attack_pt = _.random(4, 6);
+      special_pt = 5;
     break;
-
     case "2":
-      attack_pt = 15;
+      attack_pt = _.random(1, 10);
       special_pt = 25;
     break;
     case "3":
-      attack_pt = 5;
+      attack_pt = _.random(2, 8);
       special_pt = 30;
     break;
   };
@@ -43,7 +71,7 @@ var Goodguy = function (options){
 //starting the game
 var player, monster;
 
-$('.welcome button').on('click', function(event){
+$('.player_select button').on('click', function(event){
   event.preventDefault();
 
   var char_type= $(this).attr('name'),
@@ -57,8 +85,26 @@ $('.welcome button').on('click', function(event){
   });
 
   //create instance of my bad guy
-   monster = new Badguy('bowser');
+  // monster = new Badguy('bowser');
+});
+$('.opponent_select button').on('click', function(event){
+    event.preventDefault();
+
+    var char_type= $(this).attr('name'),
+        char_name= $(this).text();
+
+    //create instance of my bad guy
+     monster = new Badguy({
+       name: char_name,
+       type: char_type,
+     });
+
+
 //get ready to fight
+});
+$('.start').on('click', function(event){
+  event.preventDefault();
+
   $('.welcome').toggle(0, function (){
 
     //set player/monster name and health
@@ -72,51 +118,67 @@ $('.welcome button').on('click', function(event){
 
 //fight squence
 
-//issues: winner not random and health goes below 0
+
 $('#fight').on('click', function(event){
   event.preventDefault();
 
-var attack_type = _.random(1,2);
+var attack_type = _.random(1,20);
+
 
 if(attack_type == 1){
+  player.special(monster);
+}
+else if(attack_type >= 2){
   player.attack(monster);
 }
-else{
-  player.special(monster);
+
+
+var attack_type2 = _.random(1,20);
+
+
+if(attack_type2 == 1){
+  monster.special(player);
+}
+else if(attack_type2 >= 2){
+  monster.attack(player);
 }
 
 
   //good guy will attack the bad guy
   //bad guys health will decrease
-  player.attack(monster);
+
+  //player.attack(monster);
   $('.bgHealth').text(monster.health);
 
   //bad guy will retaliate
   //good guys health will decrease
-  monster.attack(player);
+
+  //monster.attack(player);
   $('.ggHealth').text(player.health);
+
+//when one person reaches 0 the button stops and the attack window disappears and the winner window opens
 
   if(player.health <= 0){
     //someones dead
     $('.fight').toggle();
-    $('.end').toggle();
+    $('.end_lose').toggle();
     $('#fight').attr('disabled', 'disabled');
 
   }
   else if(monster.health <= 0){
     //monster dead
     $('.fight').toggle();
-    $('.end').toggle();
+    $('.end_win').toggle();
     $('#fight').attr('disabled', 'disabled');
 
   }
-
-  if(player.health > monster.health){
-    $('.winner').text(player.name);
-  }
-  else if(player.health < monster.health){
-    $('.winner').text(monster.name);
-  }
+//displays the winners name in the new window
+  // if(player.health > monster.health){
+  //   $('.winner').prepend(player.name);
+  // }
+  // else if(player.health < monster.health){
+  //   $('.winner').prepend(monster.name);
+  // }
 });
 
 
@@ -169,43 +231,3 @@ else{
 //   name:'john',
 //   health: 100,
 //   });
-
-// ///////////////////////////////////
-// var Dog = function (options){
-//   options = options || {};
-//   this.color = options.color;
-//   this.hungry = (options.hungry=== undefined) ? true : options.hungry;
-//   this.status = 'normal';
-// };
-//
-// var Human = function (options){
-//   options = options || {};
-//   this.cool = (options.cool=== undefined) ? false : options.cool;
-//   this.pet = function (target){
-//     this.status = 'happy';
-//   };
-//
-//   this.feed = function(dog){
-//     dog.hungry = false;
-//   };
-// };
-//
-// var sadie = new Dog({
-//   color: "black",
-//   hungry: false
-// });
-//
-// var moonshine = new Dog({
-//   color: "blue-red"
-// });
-//
-// var atticus = new Dog();
-//
-// var mason = new Human();
-//
-// var julia = new Human({
-//   cool: true
-// });
-
-
-// when i hit attack the number can drop by a possible 10 then increments so next time it can only go 10 lower than last time until it gets to 0.

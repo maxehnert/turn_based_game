@@ -18,10 +18,19 @@
     <div class="hero-unit">
 
       <div class="welcome">
-        <h3>choose your character</h3>
-        <button name="1">mario</button>
-        <button name="2">princess</button>
-        <button name="3">toad</button>
+        <div class="player_select">
+          <h3>choose your character</h3>
+          <button name="1"><img class="bond" src="../images/bond.png">Bond</button>
+          <button name="2"><img class="natalya" src="../images/girl.png">Natalya</button>
+          <button name="3"><img class="oddjob" src="../images/oddjob.png">Oddjob</button>
+        </div>
+        <div class="opponent_select">
+          <h3>choose your opponent</h3>
+          <button name="1"><img class="valentin" src="../images/valentin.png">Valentin</button>
+          <button name="2"><img class="boris" src="../images/boris.png">Boris</button>
+          <button name="3"><img class="jaws" src="../images/jaws.png">Jaws</button>
+        </div>
+        <button class="start">START</button>
       </div>
 
       <div class="fight">
@@ -31,8 +40,11 @@
         <button id="fight">Fight <span class="bgName"></span>       </button>
       </div>
 
-      <div class="end">
-        <p class="winner"></p>
+      <div class="end_win">
+        <p class="winner">you win <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/d70647a815959755e5ac71c6eaa02f35/tumblr_mtuh69vqXf1ru04kko1_r1_500.gif"  class="invincible"> </p>
+      </div>
+      <div class="end_lose">
+        <p class="winner">you lose <img src="http://0.media.dorkly.cvcdn.com/16/92/2171b9fc420f7e8cbe05066a4e60c840-gif-of-the-day-shaken-not-stirred-64.gif" class="geye"> </p>
       </div>
     </div>
       <!-- <p>Create a Turn-Based Game

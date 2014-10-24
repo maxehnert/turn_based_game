@@ -22,7 +22,7 @@ body {
   text-align: center;
 }
 
-.fight{
+.fight, .end_lose, .end_win{
   display: none;
   text-align: center;
 }
@@ -31,8 +31,5 @@ body {
 
 }
 
-.end{
-  display: none;
-  text-align: center;
-}
+
 }
