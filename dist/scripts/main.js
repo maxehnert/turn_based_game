@@ -15,6 +15,7 @@ var special_pts, attack_pts;
   options = options || {};
   this.name = options.name;
   this.type = options.type;
+  //this.image = options.image;
   this.health = 100;
   switch (this.type){
     case "1":
@@ -45,6 +46,7 @@ var Goodguy = function (options){
   options = options || {};
   this.name = options.name;
   this.type = options.type;
+//  this.image = options.image;
   this.health = 100;
   switch (this.type){
     case "1":
@@ -77,16 +79,18 @@ $('.player_select button').on('click', function(event){
   var char_type= $(this).attr('name'),
       char_name= $(this).text();
 
+      //char_image= $(this).attr('class');
   //create instance of good guy
   player = new Goodguy({
     name: char_name,
     type: char_type,
-
+    //image: char_image,
   });
 
   //create instance of my bad guy
   // monster = new Badguy('bowser');
 });
+
 $('.opponent_select button').on('click', function(event){
     event.preventDefault();
 
@@ -102,8 +106,11 @@ $('.opponent_select button').on('click', function(event){
 
 //get ready to fight
 });
+
 $('.start').on('click', function(event){
   event.preventDefault();
+
+   if( Goodguy.name === true && Badguy.name === true ){
 
   $('.welcome').toggle(0, function (){
 
@@ -114,6 +121,12 @@ $('.start').on('click', function(event){
 
     $('.fight').toggle();
   });
+}
+else{
+  console.log('test');
+  alert("select two characters");
+
+}
 });
 
 //fight squence
@@ -122,26 +135,81 @@ $('.start').on('click', function(event){
 $('#fight').on('click', function(event){
   event.preventDefault();
 
-var attack_type = _.random(1,20);
+var who_attack = _.random(1,2);
 
+if(who_attack == 1){
 
-if(attack_type == 1){
-  player.special(monster);
+  var attack_type = _.random(1,20);
+
+  if(attack_type == 1){
+    player.special(monster);
+  }
+  else if(attack_type >= 2){
+    player.attack(monster);
+  }
+
 }
-else if(attack_type >= 2){
-  player.attack(monster);
+else{
+  var attack_type2 = _.random(1,20);
+
+
+  if(attack_type2 == 1){
+    monster.special(player);
+  }
+  else if(attack_type2 >= 2){
+    monster.attack(player);
+  }
 }
+///test code///
+// var p_attack = function (){
+//   var attack_type = _.random(1,20);
+//
+//
+//   if(attack_type == 1){
+//     player.special(monster);
+//   }
+//   else if(attack_type >= 2){
+//     player.attack(monster);
+//   }
+// };
+//
+// var o_attack = function(){
+//   var attack_type2 = _.random(1,20);
+//
+//
+//   if(attack_type2 == 1){
+//     monster.special(player);
+//   }
+//   else if(attack_type2 >= 2){
+//     monster.attack(player);
+//   }
+// };
 
+// $('#fight').toggle(function (){
+//
+//   var attack_type = _.random(1,20);
+//
+//
+//   if(attack_type == 1){
+//     player.special(monster);
+//   }
+//   else if(attack_type >= 2){
+//     player.attack(monster);
+//   }
+// },
+// function(){
+//   var attack_type2 = _.random(1,20);
+//
+//
+//   if(attack_type2 == 1){
+//     monster.special(player);
+//   }
+//   else if(attack_type2 >= 2){
+//     monster.attack(player);
+//   }
+// });
+//end test code////
 
-var attack_type2 = _.random(1,20);
-
-
-if(attack_type2 == 1){
-  monster.special(player);
-}
-else if(attack_type2 >= 2){
-  monster.attack(player);
-}
 
 
   //good guy will attack the bad guy
