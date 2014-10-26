@@ -175,6 +175,7 @@ $('.start').on('click', function(event){
 
 $('#fight').on('click', function(event){
   event.preventDefault();
+animateDiv( console.log('test'));
 
 var who_attack = _.random(1,2);
 
@@ -201,6 +202,8 @@ else{
     monster.attack(player);
   }
 }
+
+
 ///test code///
 // var p_attack = function (){
 //   var attack_type = _.random(1,20);
@@ -251,9 +254,9 @@ else{
 // });
 //end test code////
 
-  $('.chair').show(1000, function(){
-
-  });
+  // $('.chair').show('fast', function(){
+  //
+  // });
 
   //good guy will attack the bad guy
   //bad guys health will decrease
@@ -293,52 +296,29 @@ else{
 });
 
 
+function makeNewPosition(){
 
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(".fight").height() - 50;
+    var w = $(".fight").width() - 50;
 
+    var nh = _.random(1) * h;
+    var nw = _.random(1) * w;
 
+    return [nh,nw];
 
+}
 
+function animateDiv(){
+    var newq = makeNewPosition();
+    $('.chair').show('fast').animate({ top: newq[0], left: newq[1] },1000, function(){
+      animateDiv();
+    }).hide('slow').stop();
 
-//
-//
-// if(Player.health == 0){
-//   ('something').addClass('class that pops up enemy win window');
-// }
-//
-// $('#attack').on('click', function(){
-//   Player.attack;
-//   document.getElementById('bad_health').value = Enemy.health;
-// });
-//
-// var Player = function (options) {
-//   this.name = options.name;
-//   this.health = options.health;
-//   this.attack = function (target) {
-//     target.health = target.health - _.random(10);
-//   };
-// };
-//
-// var Enemy = function (options) {
-//   this.name = options.name;
-//   this.health = options.health;
-//   this.attack = function (target) {
-//     target.health = target.health - _.random(10);
-//   };
-// };
-//
-// var player1 = new Player({
-//   name:'Max',
-//   health: 100,
-//   });
-// var player2 = new Player({
-//   name:'Jack',
-//   health: 100,
-//   });
-// var monster1 = new Enemy({
-//   name:'jim',
-//   health: 100,
-//   });
-// var monster2 = new Enemy({
-//   name:'john',
-//   health: 100,
-//   });
+};
+
+$('.play_again').on('click', function(){
+  location.reload(true);
+});
+
+// $('body').css(cursor: url(../images/crosshair.png));
