@@ -1,12 +1,14 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/bitters/app/assets/stylesheets/base';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  //color: #333;
+  background-color: linear-gradient(red, orange);
 }
 
 .hero-unit {
@@ -18,8 +20,20 @@ body {
   background-color: #eee;
   border-radius: 6px;
   padding: 60px;
+}
 .welcome{
   text-align: center;
+  position:relative;
+
+  .player_select{
+    float:left
+  }
+  .opponent_select{
+    float:right;
+  }
+  .start_container{
+    width:100%;
+  }
 }
 
 .fight, .end_lose, .end_win{
@@ -27,9 +41,37 @@ body {
   text-align: center;
 }
 
-.ggHealth, .bgHealth{
+
+.hoverImages{
+  height: 280px;
+}
+.weapon-hover{
+  display:none;
 
 }
 
+button{
+  background-color:black;
+  border-radius: 5px;
 
+}
+.bp:hover{
+  background-image: linear-gradient(red, orange);
+  }
+.bo:hover{
+  background-image: linear-gradient(HSLA(243, 82%, 11%, 1), HSLA(208, 23%, 16%, 1));
+}
+.fight{
+  padding:10%;
+  .health_status{
+    height: 400px;
+    width:700px;
+  }
+  .fight_info{
+  margin-top:-10%;
+  }
+}
+
+.chair{
+  display:none;
 }
