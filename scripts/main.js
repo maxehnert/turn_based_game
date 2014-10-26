@@ -89,6 +89,11 @@ $('.player_select button').on('click', function(event){
 
   //create instance of my bad guy
   // monster = new Badguy('bowser');
+// }).on('mouseover', function(){
+//   // $(this).on('mouseover', function(){
+//     $('.weapon-hover').show("slow");
+//   console.log('test');
+//})
 });
 
 $('.opponent_select button').on('click', function(event){
@@ -107,10 +112,46 @@ $('.opponent_select button').on('click', function(event){
 //get ready to fight
 });
 
+$('.b1').on('mouseover', function(){
+  $('.weapon1').show();
+}).on('mouseleave', function(){
+  $('.weapon1').hide();
+});
+
+$('.b2').on('mouseover', function(){
+  $('.weapon2').show();
+}).on('mouseleave', function(){
+  $('.weapon2').hide();
+});
+
+$('.b3').on('mouseover', function(){
+  $('.weapon3').show();
+}).on('mouseleave', function(){
+  $('.weapon3').hide();
+});
+
+$('.b4').on('mouseover', function(){
+  $('.weapon4').show();
+}).on('mouseleave', function(){
+  $('.weapon4').hide();
+});
+
+$('.b5').on('mouseover', function(){
+  $('.weapon5').show();
+}).on('mouseleave', function(){
+  $('.weapon5').hide();
+});
+
+$('.b6').on('mouseover', function(){
+  $('.weapon6').show();
+}).on('mouseleave', function(){
+  $('.weapon6').hide();
+});
+
 $('.start').on('click', function(event){
   event.preventDefault();
 
-   if( Goodguy.name === true && Badguy.name === true ){
+   //if( Goodguy.name === true && Badguy.name === true ){
 
   $('.welcome').toggle(0, function (){
 
@@ -121,12 +162,12 @@ $('.start').on('click', function(event){
 
     $('.fight').toggle();
   });
-}
-else{
-  console.log('test');
-  alert("select two characters");
-
-}
+// }
+// else{
+//   console.log('test');
+//   alert("select two characters");
+//
+// }
 });
 
 //fight squence
@@ -210,7 +251,9 @@ else{
 // });
 //end test code////
 
+  $('.chair').show(1000, function(){
 
+  });
 
   //good guy will attack the bad guy
   //bad guys health will decrease

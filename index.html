@@ -15,29 +15,48 @@
   </head>
   <body>
 
-    <div class="hero-unit">
+    <!-- <div class="hero-unit"> -->
 
       <div class="welcome">
+        <h1>GoldenEye Arcade</h1> <br>
         <div class="player_select">
-          <h3>choose your character</h3>
-          <button name="1"><img class="bond image" src="../images/bond.png">Bond</button>
-          <button name="2"><img class="natalya image" src="../images/girl.png">Natalya</button>
-          <button name="3"><img class="oddjob image" src="../images/oddjob.png">Oddjob</button>
+          <h3>Choose Your Character</h3>
+          <div class="hoverImages">
+            <img class="weapon1 weapon-hover" src="../images/weapon1.png">
+            <img class="weapon2 weapon-hover" src="../images/weapon2.png">
+            <img class="weapon3 weapon-hover" src="../images/weapon3.png">
+          </div>
+
+          <button class="b1 b bp" name="1"><img class="bond image" src="../images/bond.png"><p>Bond</p></button>
+          <button class="b2 b bp" name="2"><img class="natalya image" src="../images/girl.png"><p>Natalya</p></button>
+          <button class="b3 b bp" name="3"><img class="oddjob image" src="../images/oddjob.png"><p>Oddjob</p></button>
         </div>
+        <br>
         <div class="opponent_select">
-          <h3>choose your opponent</h3>
-          <button name="1"><img class="valentin image" src="../images/valentin.png">Valentin</button>
-          <button name="2"><img class="boris image" src="../images/boris.png">Boris</button>
-          <button name="3"><img class="jaws image" src="../images/jaws.png">Jaws</button>
+          <h3>Choose Your Opponent</h3>
+          <div class="hoverImages">
+            <img class="weapon4 weapon-hover" src="../images/weapon4.png">
+            <img class="weapon5 weapon-hover" src="../images/weapon5.png">
+            <img class="weapon6 weapon-hover" src="../images/weapon6.png">
+          </div>
+          <button class="b4 b bo" name="1"><img class="valentin image" src="../images/valentin.png"><p>Valentin</p></button>
+          <button class="b5 b bo" name="2"><img class="boris image" src="../images/boris.png"><p>Boris</p></button>
+          <button class="b6 b bo" name="3"><img class="jaws image" src="../images/jaws.png"><p>Jaws</p></button>
         </div>
-        <button class="start">START</button>
+        <br>
+        <div class="start_container">
+          <button class="start">START</button>
+      </div>
       </div>
 
       <div class="fight">
-        <p class="ggName"> <span class="ggHealth"></span> </p>
-        <p>vs</p>
-        <p class="bgName"> <span class="bgHealth"></span></p>
-        <button id="fight">Fight <span class="bgName"></span>       </button>
+        <img src="../images/health_bar.png" class="health_status">
+        <div class="fight_info">
+          <p class="ggName"> <span class="ggHealth"></span> </p>
+          <p>vs</p>
+          <p class="bgName"> <span class="bgHealth"></span></p>
+          <button id="fight">Fight <span class="bgName"></span>     </button>
+        </div>
       </div>
 
       <div class="end_win">
@@ -46,7 +65,9 @@
       <div class="end_lose">
         <p class="winner">you lose <img src="http://0.media.dorkly.cvcdn.com/16/92/2171b9fc420f7e8cbe05066a4e60c840-gif-of-the-day-shaken-not-stirred-64.gif" class="geye"> </p>
       </div>
-    </div>
+
+  <img src="http://goldeneye007.detstar.com/GESE/screenshots/intropage2/dam_desks.jpg" class="chair">
+  <!--   </div> -->
       <!-- <p>Create a Turn-Based Game
 
         First and foremost, please have fun with this. This encapsulates all of the things you have worked with so far and possibly some new things               you'll learn as you push yourself. Remember to break this down into small tasks and commit often.
