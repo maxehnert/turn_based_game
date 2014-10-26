@@ -12,16 +12,7 @@ body {
   cursor: crosshair;/* url(https://cdn0.iconfinder.com/data/icons/tab-bar-ios-and-wp8-vector-icons/48/crosshair-512.png), auto; */
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-}
+
 .welcome{
   text-align: center;
   position:relative;
@@ -71,18 +62,29 @@ button:hover{background-color:HSLA(0, 0%, 66%, 1);}
   background-image: linear-gradient(HSLA(243, 82%, 11%, 1), HSLA(208, 23%, 16%, 1));
 }
 .fight{
-  background: url(http://www.vizzed.com/vizzedboard/retro/user_screenshots/saves21/216736/NINTENDO64--GoldenEye%20007_Oct13%2011_13_43.png) no-repeat center center fixed;
+  background: url(http://www.vizzed.com/vizzedboard/retro/user_screenshots/saves21/216736/NINTENDO64--GoldenEye%20007_Oct13%2011_13_43.png) no-repeat;
 //  background-repeat: no-repeat;
   //background-position: 480px 120px;
-  //background-size:cover;
-  padding:10%;
+  background-size:100% 100%;
+  padding-bottom:20%;
 
   .health_status{
     height: 400px;
-    width:700px;
+    width: 800px;
+    margin-top: 5%;
   }
   .fight_info{
-  margin-top:-20%;
+  margin-top:-22%;
+  }
+  p{
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .ggName{
+    color: red;
+  }
+  .bgName{
+    color: blue;
   }
 }
 
@@ -103,4 +105,8 @@ button:hover{background-color:HSLA(0, 0%, 66%, 1);}
   width: 70%;
   height: 250px;;
   margin: auto;
+}
+.end_lose p, .end_win p{
+  font-size: 30px;
+  font-weight: bold;
 }

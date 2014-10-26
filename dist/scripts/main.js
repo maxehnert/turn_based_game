@@ -86,7 +86,7 @@ $('.player_select button').on('click', function(event){
     type: char_type,
     //image: char_image,
   });
-
+$('.ggselection').prepend(player.name);
   //create instance of my bad guy
   // monster = new Badguy('bowser');
 // }).on('mouseover', function(){
@@ -107,7 +107,7 @@ $('.opponent_select button').on('click', function(event){
        name: char_name,
        type: char_type,
      });
-
+$('.bgselection').prepend(monster.name).add(this.image);
 
 //get ready to fight
 });
@@ -302,16 +302,16 @@ function makeNewPosition(){
     var h = $(".fight").height() - 50;
     var w = $(".fight").width() - 50;
 
-    var nh = _.random(1) * h;
-    var nw = _.random(1) * w;
+    var newh = _.random(1) * h;
+    var neww = _.random(1) * w;
 
-    return [nh,nw];
+    return [newh,neww];
 
 }
 
 function animateDiv(){
-    var newq = makeNewPosition();
-    $('.chair').show('fast').animate({ top: newq[0], left: newq[1] },1000, function(){
+    var newp = makeNewPosition();
+    $('.chair').show('fast').animate({ top: newp[0], left: newp[1] },1000, function(){
       animateDiv();
     }).hide('slow').stop();
 

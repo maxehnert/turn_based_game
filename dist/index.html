@@ -12,64 +12,74 @@
     <link rel="stylesheet" href="styles/main.css">
 
     <script src="scripts/vendor/modernizr.js"></script>
-  </head>
-  <body>
+</head>
+<body>
 
-    <!-- <div class="hero-unit"> -->
-
-      <div class="welcome">
-        <h1><img src="../images/logo.png" class="logo"></h1> 
-        <br>
-        <div class="player_select">
-          <h3>Choose Your Character</h3>
-          <div class="hoverImages">
-            <img class="weapon1 weapon-hover" src="../images/weapon1.png">
-            <img class="weapon2 weapon-hover" src="../images/weapon2.png">
-            <img class="weapon3 weapon-hover" src="../images/weapon3.png">
-          </div>
-
-          <button class="b1 b bp" name="1"><img class="bond image" src="../images/bond.png"><p>Bond</p></button>
-          <button class="b2 b bp" name="2"><img class="natalya image" src="../images/girl.png"><p>Natalya</p></button>
-          <button class="b3 b bp" name="3"><img class="oddjob image" src="../images/oddjob.png"><p>Oddjob</p></button>
-        </div>
-        <br>
-        <div class="opponent_select">
-          <h3>Choose Your Opponent</h3>
-          <div class="hoverImages">
-            <img class="weapon4 weapon-hover" src="../images/weapon4.png">
-            <img class="weapon5 weapon-hover" src="../images/weapon5.png">
-            <img class="weapon6 weapon-hover" src="../images/weapon6.png">
-          </div>
-          <button class="b4 b bo" name="1"><img class="valentin image" src="../images/valentin.png"><p>Valentin</p></button>
-          <button class="b5 b bo" name="2"><img class="boris image" src="../images/boris.png"><p>Boris</p></button>
-          <button class="b6 b bo" name="3"><img class="jaws image" src="../images/jaws.png"><p>Jaws</p></button>
-        </div>
-        <br>
-        <div class="start_container">
-          <button class="start">START</button>
-      </div>
+  <div class="welcome">
+    <h1><img src="../images/logo.png" class="logo"></h1>
+    <br>
+    <div class="player_select">
+      <h3>Choose Your Character</h3>
+      <div class="hoverImages">
+        <img class="weapon1 weapon-hover" src="../images/weapon1.png">
+        <img class="weapon2 weapon-hover" src="../images/weapon2.png">
+        <img class="weapon3 weapon-hover" src="../images/weapon3.png">
       </div>
 
-      <div class="fight">
-        <img src="../images/health_bar.png" class="health_status">
-        <div class="fight_info">
-          <p class="ggName"> <span class="ggHealth"></span> </p>
-          <p>vs</p>
-          <p class="bgName"> <span class="bgHealth"></span></p>
-          <button id="fight">Fight <span class="bgName"></span>     </button>
-        </div>
-        <img src="http://www.vizzed.com/vizzedboard/retro/user_screenshots/saves21/216736/NINTENDO64--GoldenEye%20007_Oct13%209_24_39.png" class="chair">
+      <button class="b1 b bp" name="1"><img class="bond image" src="../images/bond.png"><p>Bond</p></button>
+      <button class="b2 b bp" name="2"><img class="natalya image" src="../images/girl.png"><p>Natalya</p></button>
+      <button class="b3 b bp" name="3"><img class="oddjob image" src="../images/oddjob.png"><p>Oddjob</p></button>
+    </div>
+    <br>
+    <div class="opponent_select">
+      <h3>Choose Your Opponent</h3>
+      <div class="hoverImages">
+        <img class="weapon4 weapon-hover" src="../images/weapon4.png">
+        <img class="weapon5 weapon-hover" src="../images/weapon5.png">
+        <img class="weapon6 weapon-hover" src="../images/weapon6.png">
       </div>
+      <button class="b4 b bo" name="1"><img class="valentin image" src="../images/valentin.png"><p>Valentin</p></button>
+      <button class="b5 b bo" name="2"><img class="boris image" src="../images/boris.png"><p>Boris</p></button>
+      <button class="b6 b bo" name="3"><img class="jaws image" src="../images/jaws.png"><p>Jaws</p></button>
+    </div>
+    <br>
+    <div class="start_container">
+      <button class="start">START</button>
+      <span class="ggselection"></span>
+      <span class="bgselection"></span>
+    </div>
+  </div> <!-- welcome class -->
 
-      <div class="end_win">
-        <p class="winner"><p>you win</p> <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/d70647a815959755e5ac71c6eaa02f35/tumblr_mtuh69vqXf1ru04kko1_r1_500.gif"  class="invincible"> </p>
-        <button class="play_again" type="text">Play Again</button>
-      </div>
-      <div class="end_lose">
-        <p class="winner"><p>You Lose</p> <img src="http://0.media.dorkly.cvcdn.com/16/92/2171b9fc420f7e8cbe05066a4e60c840-gif-of-the-day-shaken-not-stirred-64.gif" class="geye">
-        </p>
-        <button class="play_again" type="text">Play Again</button>
-      </div>
+  <div class="fight">
+    <img src="../images/health_bar.png" class="health_status">
+    <div class="fight_info">
+      <p class="ggName">
+        <span class="ggHealth"></span>
+      </p>
+      <p>vs</p>
+      <p class="bgName">
+        <span class="bgHealth"></span>
+      </p>
+      <button id="fight">Fight <!-- <span class="bgName"></span> -->     </button>
+    </div>
+    <img src="http://www.vizzed.com/vizzedboard/retro/user_screenshots/saves21/216736/NINTENDO64--GoldenEye%20007_Oct13%209_24_39.png" class="chair">
+  </div>
+
+  <div class="end_win">
+    <p class="winner">
+      <p>You Win</p>
+      <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/d70647a815959755e5ac71c6eaa02f35/tumblr_mtuh69vqXf1ru04kko1_r1_500.gif"  class="invincible">
+    </p>
+    <button class="play_again" type="text">Play Again</button>
+  </div>
+
+  <div class="end_lose">
+    <p class="winner">
+      <p>You Lose</p>
+      <img src="http://0.media.dorkly.cvcdn.com/16/92/2171b9fc420f7e8cbe05066a4e60c840-gif-of-the-day-shaken-not-stirred-64.gif" class="geye">
+    </p>
+    <button class="play_again" type="text">Play Again</button>
+  </div>
 
 
   <!--   </div> -->
