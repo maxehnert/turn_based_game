@@ -107,7 +107,7 @@ $('.opponent_select button').on('click', function(event){
        name: char_name,
        type: char_type,
      });
-$('.bgselection').prepend(monster.name).add(this.image);
+$('.bgselection').prepend(monster.name);
 
 //get ready to fight
 });
