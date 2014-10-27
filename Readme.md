@@ -1,10 +1,10 @@
-## This is a turn based games
+## This is a turn-based game
 
-The game is themed around the nintendo 64 game Goldeneye.
+The game is themed around the Nintendo 64 game Goldeneye.
 
 Instructions:
 
-1. Choose your character
-2. Choose your opponent
+1. Choose your character.
+2. Choose your opponent.
 3. Click the fight button on the next screen repeatedly until someone reaches 0.
 4. Click the play again button on the next screen if you wish to try again.
